@@ -6,10 +6,26 @@ let imgbtn= document.querySelectorAll("img");
 let stone=document.querySelector("#stone");
 let paper=document.querySelector("#paper");
 let scissor=document.querySelector("#scissor");
+let res=document.getElementById("res");
 
-var userScore=0;
-var compScore=0;
+let userScore=document.getElementById("userscore");
+let compScore=document.getElementById("compscore");
+let msg=document.querySelector(".result");
 
+let us=0;
+var cs=0;
+
+res.addEventListener("click" , () => {
+    
+    us=0;
+    cs=0;
+    compScore.innerText=cs;
+    userScore.innerText=us;
+});
+
+
+// let userScore=document.getElementById("userscore");
+// let compScore=document.getElementById("compscore");
 var userChoice,compChoice;
 
 const gameLogic = (userChoice) => {
@@ -23,31 +39,43 @@ const gameLogic = (userChoice) => {
    
         if(sum===3){
             if(userChoice===1){
+                cs++;
                 console.log("computer wins");
-
+                compScore.innerText=cs;
             }
             else{
+                us++;
                 console.log("user wins");
+                userScore.innerText=us;
             }
         }
         else if(sum===4){
             if(userChoice===1){
+                us++;
                 console.log("user wins");
+                userScore.innerText=us;
             }
             else{
+                cs++;
                 console.log("computer wins");
+                compScore.innerText=cs;
             }
         }
         else if(sum===5){
             if(userChoice===2){
+                cs++;
                 console.log("computer wins");
+                compScore.innerText=cs;
             }
             else{
+                us++;
                 console.log("user wins");
+                userScore.innerText=us;
             }
         }
     }
 }
+
 
 stone.addEventListener("click", () => {
     userChoice=1;
