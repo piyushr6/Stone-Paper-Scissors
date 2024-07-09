@@ -73,12 +73,15 @@ img{
     border: 1px solid black;
     font-size: 15px;
     border-radius: 4%;
-    background-color:#fcd29f; ;
+    background-color:#fcd29f;
+    border-radius: 10%;
+    
 }
 
 #res:hover{
     cursor: pointer;
     background-color: rgba(255, 228, 196, 0.705);
+    font-weight: bold;
 }
 
 .result{
